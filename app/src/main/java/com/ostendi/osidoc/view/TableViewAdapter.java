@@ -26,7 +26,7 @@ import java.util.List;
 
 public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHeader, Cell> {
     private static final String LOG_TAG = TableViewAdapter.class.getSimpleName();
-    private StoreDefinition storeDefinition = new StoreDefinition();
+    private StoreDefinition storeDefinition = StoreDefinition.getInstance();
 
     public TableViewAdapter(Context context) {
         super(context);

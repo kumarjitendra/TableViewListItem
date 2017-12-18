@@ -69,13 +69,13 @@ public class CellLayoutManager extends LinearLayoutManager {
     @Override
     public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State
             state) {
-        if (m_iRowHeaderRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE &&
+    /**    if (m_iRowHeaderRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE &&
                 !m_iRowHeaderRecyclerView.isScrollOthers()) {
             // CellRecyclerViews should be scrolled after the RowHeaderRecyclerView.
             // Because it is one of the main compared criterion to make each columns fit.
             m_iRowHeaderRecyclerView.scrollBy(0, dy);
         }
-
+**/
         int nScroll = super.scrollVerticallyBy(dy, recycler, state);
 
         // It is important to determine right position to fit all columns which are the same y pos.
@@ -359,7 +359,7 @@ public class CellLayoutManager extends LinearLayoutManager {
 
             if (m_bNeedFit) {
                 // for the first time to populate adapter
-                if (m_jRowHeaderLayoutManager.findLastVisibleItemPosition() == nPosition) {
+         /**      if (m_jRowHeaderLayoutManager.findLastVisibleItemPosition() == nPosition) {
 
                     // The below line helps to change left & right value of the each column
                     // header views
@@ -370,7 +370,7 @@ public class CellLayoutManager extends LinearLayoutManager {
                     Log.e(LOG_TAG, nPosition + " fitWidthSize populating data for the first time");
 
                     m_bNeedFit = false;
-                }
+                }**/
             }
         }
     }

@@ -97,15 +97,8 @@ public class MainFragment extends Fragment {
 
     private void initTableView() {
         tableViewModel.loadNextRows();
-      /**  List<ColumnHeader> columnHeaders = tableViewModel.getColumnHeaders();
-         for (int i = 0; i < 1; i++) {
-         List<Cell> cellList = tableViewModel.getRowCells(i);
-         m_cellList.addAll(cellList);}
-
-         // Load all data
-         columnHeaderList.addAll(columnHeaders);
-         abstractTableAdapter.setAllItems(columnHeaderList, rowHeaderList, m_cellList);**/
-
+       List<ColumnHeader> columnHeaders = tableViewModel.getColumnHeaders();
+        columnHeaderList.addAll(columnHeaders);
     }
 
     private void observeLiveData() {
@@ -113,7 +106,7 @@ public class MainFragment extends Fragment {
         tableViewModel.getStore().observe(this, new Observer<List<Record>>() {
             @Override
             public void onChanged(@Nullable List<Record> recordList) {
-                abstractTableAdapter.setAllItems(Collections.emptyList(),Collections.emptyList(),recordList);
+                abstractTableAdapter.setAllItems(columnHeaderList,Collections.emptyList(),recordList);
             }
 
         });

@@ -16,6 +16,19 @@ import java.util.Map;
 import java.util.Set;
 
 public class StoreDefinition {
+    //Apply singelton to use this object from other class
+    private static StoreDefinition instance = null;
+
+    protected StoreDefinition() {
+        // Exists only to defeat instantiation.
+    }
+
+    public static StoreDefinition getInstance() {
+        if (instance == null) {
+            instance = new StoreDefinition();
+        }
+        return instance;
+    }
 
     public static final DateTimeFormatter ISO_8601_DATE_FORMAT = DateTimeFormat.forPattern("yyyy-MM-dd");
     public static final DateTimeFormatter ISO_8601_TIME_FORMAT = DateTimeFormat.forPattern("HH:mm:ss");
@@ -44,27 +57,7 @@ public class StoreDefinition {
     }
 
     public String getFieldId(int fieldNumber) {
-    //return new ArrayList<>(fieldDefinitions.keySet()).get(fieldNumber);
-
-
-      //  List<String> result = (List<String>) fieldDefinitions.values().toArray()[fieldNumber];
-       // result.get(fieldNumber);
-
-
-
-     //   List<Map.Entry<String, FieldDefinition>> indexedList = new ArrayList<Map.Entry<String, FieldDefinition>>(fieldDefinitions.entrySet());
-     //   Map.Entry<String, FieldDefinition> entry = indexedList.get(fieldNumber);
-      //  String str = entry.getValue().getId();
-
-
-      /**
-        Set<String> set = fieldDefinitions.keySet();
-        List<FieldDefinition> list = new ArrayList<FieldDefinition>(set.hashCode());
-        return String.valueOf(list.get(fieldNumber));
- **/
-
-  return null;
-
+        return new ArrayList<>(fieldDefinitions.keySet()).get(fieldNumber);
     }
 
     public int getFieldCount() {

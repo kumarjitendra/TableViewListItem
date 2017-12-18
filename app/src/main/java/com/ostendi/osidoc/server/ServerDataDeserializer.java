@@ -28,7 +28,7 @@ public final class ServerDataDeserializer {
     }
 
     public static StoreDefinition deserializeStoreDefinition(String tableJsonText) {
-        StoreDefinition storeDefinition = new StoreDefinition();
+        StoreDefinition storeDefinition = StoreDefinition.getInstance();
         try {
             JSONObject tableJson = new JSONObject(tableJsonText);
 
