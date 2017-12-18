@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel.layoutmanager;
+package com.ostendi.osidoc.view.layoutmanager;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,10 +7,10 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 
-import com.ostendi.osidoc.viewmodel.ITableView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.CellRecyclerView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-import com.ostendi.osidoc.viewmodel.util.TableViewUtils;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.CellRecyclerView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.util.TableViewUtils;
 
 /**
  * Created by jitendra on 17/11/2017.

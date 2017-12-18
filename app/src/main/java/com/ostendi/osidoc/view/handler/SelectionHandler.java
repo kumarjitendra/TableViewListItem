@@ -1,21 +1,16 @@
-package com.ostendi.osidoc.viewmodel.handler;
+package com.ostendi.osidoc.view.handler;
 
 import android.view.View;
 
-import com.ostendi.osidoc.viewmodel.ITableView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.CellRecyclerView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-
-/**
- * Created by jitendra on 15/11/2017.
- */
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.CellRecyclerView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
 
 public class SelectionHandler {
 
     public static final int UNSELECTED_POSITION = -1;
     private int m_nSelectedRowPosition = UNSELECTED_POSITION;
     private int m_nSelectedColumnPosition = UNSELECTED_POSITION;
-
 
     private ITableView m_iTableView;
     private AbstractViewHolder m_jPreviousSelectedViewHolder;

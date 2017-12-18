@@ -1,17 +1,13 @@
-package com.ostendi.osidoc.viewmodel.adapter.recyclerview;
+package com.ostendi.osidoc.view.adapter.recyclerview;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.icu.text.AlphabeticIndex;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ViewGroup;
 
 import com.ostendi.osidoc.viewmodel.TableViewModel;
-import com.ostendi.osidoc.viewmodel.adapter.ITableAdapter;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.adapter.ITableAdapter;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
 
 import java.util.List;
 

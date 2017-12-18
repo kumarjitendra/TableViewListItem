@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder;
+package com.ostendi.osidoc.view.adapter.recyclerview.holder;
 
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;

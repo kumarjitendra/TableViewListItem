@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel.util;
+package com.ostendi.osidoc.view.util;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

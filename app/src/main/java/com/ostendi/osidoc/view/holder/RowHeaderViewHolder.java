@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.ostendi.osidoc.R;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
 
 public class RowHeaderViewHolder extends AbstractViewHolder {
     private RadioButton radioButton;

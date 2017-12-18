@@ -1,36 +1,33 @@
-package com.ostendi.osidoc.view;
+package com.ostendi.osidoc.view.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.ostendi.osidoc.model.FieldDefinition;
 import com.ostendi.osidoc.model.Record;
 import com.ostendi.osidoc.model.StoreDefinition;
 import com.ostendi.osidoc.model.val.Value;
+import com.ostendi.osidoc.server.Store;
 import com.ostendi.osidoc.view.holder.CellViewHolder;
 import com.ostendi.osidoc.view.holder.ColumnHeaderViewHolder;
 import com.ostendi.osidoc.view.holder.RowHeaderViewHolder;
-import com.ostendi.osidoc.viewmodel.adapter.AbstractTableAdapter;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+
 import com.ostendi.osidoc.R;
 import com.ostendi.osidoc.viewmodel.Cell;
 import com.ostendi.osidoc.viewmodel.ColumnHeader;
 import com.ostendi.osidoc.viewmodel.RowHeader;
 
-import java.util.List;
-
 public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHeader, Cell> {
+    Store store;
     private static final String LOG_TAG = TableViewAdapter.class.getSimpleName();
-    private StoreDefinition storeDefinition = StoreDefinition.getInstance();
 
-    public TableViewAdapter(Context context) {
+    public TableViewAdapter(Context context, Store store) {
         super(context);
-
+        this.store=store;
     }
 
     //It recycles ViewHolder object to inflate from layout
@@ -42,11 +39,11 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
         CellViewHolder cellViewHolder = new CellViewHolder(layout);
         return cellViewHolder;
     }
-
     @Override
-    public void onBindCellViewHolder(AbstractViewHolder holder, Object p_jValue, int
+    public void onBindCellViewHolder(AbstractViewHolder holder, Object objValue, int
             xPosition, int yPosition) {
-        Record record = (Record) p_jValue;
+        Record record = (Record) objValue;
+        StoreDefinition storeDefinition =store.getDefinition();
         String fieldId = storeDefinition.getFieldId(xPosition);
         Value value = record.getFieldValue(fieldId);
 
@@ -55,7 +52,7 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
         }
         CellViewHolder viewHolder = (CellViewHolder) holder;
         viewHolder.cell_container.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        viewHolder.cell_container.setTag(value);
+        // viewHolder.cell_container.setTag(value);
         viewHolder.cell_textview.setText(value.toString());
         viewHolder.cell_textview.requestLayout();
         viewHolder.cell_container.requestLayout();

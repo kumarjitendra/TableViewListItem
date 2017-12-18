@@ -1,14 +1,14 @@
-package com.ostendi.osidoc.viewmodel.adapter.recyclerview;
+package com.ostendi.osidoc.view.adapter.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.ostendi.osidoc.viewmodel.ITableView;
-import com.ostendi.osidoc.viewmodel.ITableViewListener;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-import com.ostendi.osidoc.viewmodel.handler.SelectionHandler;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.handler.SelectionHandler;
+import com.ostendi.osidoc.view.listener.ITableViewListener;
 
 /**
  * Created by jitendra on 14/12/2017.

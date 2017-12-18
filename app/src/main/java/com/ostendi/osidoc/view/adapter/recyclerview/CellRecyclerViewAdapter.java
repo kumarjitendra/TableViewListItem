@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel.adapter.recyclerview;
+package com.ostendi.osidoc.view.adapter.recyclerview;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,13 +9,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ostendi.osidoc.viewmodel.HorizontalRecyclerViewListener;
-import com.ostendi.osidoc.viewmodel.ITableView;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.listener.HorizontalRecyclerViewListener;
 import com.ostendi.tableview.R;
-import com.ostendi.osidoc.viewmodel.adapter.ITableAdapter;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-import com.ostendi.osidoc.viewmodel.handler.SelectionHandler;
-import com.ostendi.osidoc.viewmodel.layoutmanager.ColumnLayoutManager;
+import com.ostendi.osidoc.view.adapter.ITableAdapter;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.handler.SelectionHandler;
+import com.ostendi.osidoc.view.layoutmanager.ColumnLayoutManager;
 
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
 
     private ITableAdapter iTableAdapter;
 
-    private final DividerItemDecoration cellItemDecoration;
+  //  private final DividerItemDecoration cellItemDecoration;
     private HorizontalRecyclerViewListener horizontalRecyclerViewListener;
 
     // This is for testing purpose
@@ -43,7 +43,7 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
         adapterList = new ArrayList<>();
 
         // Create Item decoration
-        cellItemDecoration = createCellItemDecoration();
+//        cellItemDecoration = createCellItemDecoration();
     }
 
     @Override
@@ -55,7 +55,7 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
         final CellRecyclerView jRecyclerView = new CellRecyclerView(context);
 
         // Add divider
-        jRecyclerView.addItemDecoration(cellItemDecoration);
+       // jRecyclerView.addItemDecoration(cellItemDecoration);
 
 
         if (iTableView != null) {
@@ -165,7 +165,6 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
 
     private DividerItemDecoration createCellItemDecoration() {
         Drawable mDivider = ContextCompat.getDrawable(context, R.drawable.cell_line_divider);
-
         DividerItemDecoration jItemDecoration = new DividerItemDecoration(context,
                 DividerItemDecoration.HORIZONTAL);
         jItemDecoration.setDrawable(mDivider);

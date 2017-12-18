@@ -1,34 +1,19 @@
 package com.ostendi.osidoc.model;
 
-import android.util.Log;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.ostendi.osidoc.model.val.ValueType;
+import com.ostendi.osidoc.server.Store;
 
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.security.AccessControlContext;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class StoreDefinition {
-    //Apply singelton to use this object from other class
-    private static StoreDefinition instance = null;
-
-    protected StoreDefinition() {
-        // Exists only to defeat instantiation.
-    }
-
-    public static StoreDefinition getInstance() {
-        if (instance == null) {
-            instance = new StoreDefinition();
-        }
-        return instance;
-    }
 
     public static final DateTimeFormatter ISO_8601_DATE_FORMAT = DateTimeFormat.forPattern("yyyy-MM-dd");
     public static final DateTimeFormatter ISO_8601_TIME_FORMAT = DateTimeFormat.forPattern("HH:mm:ss");

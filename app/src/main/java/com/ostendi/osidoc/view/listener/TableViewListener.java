@@ -1,15 +1,11 @@
-package com.ostendi.osidoc.view;
+package com.ostendi.osidoc.view.listener;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.ostendi.osidoc.viewmodel.ITableViewListener;
-import com.ostendi.osidoc.viewmodel.TableView;
-/**
- * Created by jitendra on 21/11/2017.
- */
+import com.ostendi.osidoc.view.TableView;
 
 public class TableViewListener implements ITableViewListener {
 

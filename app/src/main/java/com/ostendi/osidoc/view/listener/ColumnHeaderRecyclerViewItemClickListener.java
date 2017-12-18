@@ -1,18 +1,15 @@
-package com.ostendi.osidoc.viewmodel;
+package com.ostendi.osidoc.view.listener;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-import com.ostendi.osidoc.viewmodel.handler.SelectionHandler;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.handler.SelectionHandler;
 
-/**
- * Created by jitendra on 14/12/2017.
- */
-
-class ColumnHeaderRecyclerViewItemClickListener implements RecyclerView.OnItemTouchListener {
+public class ColumnHeaderRecyclerViewItemClickListener implements RecyclerView.OnItemTouchListener {
         private ITableViewListener m_jListener;
         private GestureDetector m_jGestureDetector;
         private RecyclerView m_jRecyclerView;

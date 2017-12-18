@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel.layoutmanager;
+package com.ostendi.osidoc.view.layoutmanager;
 
 import android.content.Context;
 import android.os.Handler;
@@ -7,11 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.ostendi.osidoc.viewmodel.HorizontalRecyclerViewListener;
-import com.ostendi.osidoc.viewmodel.ITableView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.CellRecyclerView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-import com.ostendi.osidoc.viewmodel.util.TableViewUtils;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.CellRecyclerView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.listener.HorizontalRecyclerViewListener;
+import com.ostendi.osidoc.view.util.TableViewUtils;
 
 /**
  * Created by jitendra on 17/11/2017.
@@ -38,8 +38,8 @@ public class CellLayoutManager extends LinearLayoutManager {
         super(context);
         this.cellRecyclerView = iTableView.getCellRecyclerView();
         this.columnHeaderLayoutManager = iTableView.getColumnHeaderLayoutManager();
-      //  this.m_jRowHeaderLayoutManager = iTableView.getRowHeaderLayoutManager();
-       // this.m_iRowHeaderRecyclerView = iTableView.getRowHeaderRecyclerView();
+        //  this.m_jRowHeaderLayoutManager = iTableView.getRowHeaderLayoutManager();
+        // this.m_iRowHeaderRecyclerView = iTableView.getRowHeaderRecyclerView();
         this.iTableView = iTableView;
 
         initialize();
@@ -69,13 +69,13 @@ public class CellLayoutManager extends LinearLayoutManager {
     @Override
     public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State
             state) {
-    /**    if (m_iRowHeaderRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE &&
-                !m_iRowHeaderRecyclerView.isScrollOthers()) {
-            // CellRecyclerViews should be scrolled after the RowHeaderRecyclerView.
-            // Because it is one of the main compared criterion to make each columns fit.
-            m_iRowHeaderRecyclerView.scrollBy(0, dy);
-        }
-**/
+        /**    if (m_iRowHeaderRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE &&
+         !m_iRowHeaderRecyclerView.isScrollOthers()) {
+         // CellRecyclerViews should be scrolled after the RowHeaderRecyclerView.
+         // Because it is one of the main compared criterion to make each columns fit.
+         m_iRowHeaderRecyclerView.scrollBy(0, dy);
+         }
+         **/
         int nScroll = super.scrollVerticallyBy(dy, recycler, state);
 
         // It is important to determine right position to fit all columns which are the same y pos.
@@ -359,18 +359,18 @@ public class CellLayoutManager extends LinearLayoutManager {
 
             if (m_bNeedFit) {
                 // for the first time to populate adapter
-         /**      if (m_jRowHeaderLayoutManager.findLastVisibleItemPosition() == nPosition) {
+                /**      if (m_jRowHeaderLayoutManager.findLastVisibleItemPosition() == nPosition) {
 
-                    // The below line helps to change left & right value of the each column
-                    // header views
-                    // without using requestLayout().
-                    columnHeaderLayoutManager.customRequestLayout();
+                 // The below line helps to change left & right value of the each column
+                 // header views
+                 // without using requestLayout().
+                 columnHeaderLayoutManager.customRequestLayout();
 
-                    fitWidthSize(false);
-                    Log.e(LOG_TAG, nPosition + " fitWidthSize populating data for the first time");
+                 fitWidthSize(false);
+                 Log.e(LOG_TAG, nPosition + " fitWidthSize populating data for the first time");
 
-                    m_bNeedFit = false;
-                }**/
+                 m_bNeedFit = false;
+                 }**/
             }
         }
     }

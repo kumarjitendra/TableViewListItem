@@ -1,13 +1,13 @@
-package com.ostendi.osidoc.viewmodel.adapter.recyclerview;
+package com.ostendi.osidoc.view.adapter.recyclerview;
 
 import android.content.Context;
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.ostendi.osidoc.viewmodel.HorizontalRecyclerViewListener;
-import com.ostendi.osidoc.viewmodel.VerticalRecyclerViewListener;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.listener.HorizontalRecyclerViewListener;
+import com.ostendi.osidoc.view.listener.VerticalRecyclerViewListener;
 
 public class CellRecyclerView extends RecyclerView {
     private static final String LOG_TAG = CellRecyclerView.class.getSimpleName();

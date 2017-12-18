@@ -1,12 +1,10 @@
 package com.ostendi.osidoc.view;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +13,11 @@ import android.widget.RelativeLayout;
 
 import com.ostendi.osidoc.model.Record;
 import com.ostendi.osidoc.server.Store;
+import com.ostendi.osidoc.view.adapter.TableViewAdapter;
+import com.ostendi.osidoc.view.listener.TableViewListener;
 import com.ostendi.osidoc.viewmodel.TableViewModel;
-import com.ostendi.osidoc.viewmodel.TableView;
-import com.ostendi.osidoc.viewmodel.adapter.AbstractTableAdapter;
-import com.ostendi.osidoc.viewmodel.Cell;
+import com.ostendi.osidoc.view.adapter.AbstractTableAdapter;
 import com.ostendi.osidoc.viewmodel.ColumnHeader;
-import com.ostendi.osidoc.viewmodel.RowHeader;
 import com.ostendi.osidoc.R;
 
 import java.util.ArrayList;
@@ -29,17 +26,13 @@ import java.util.List;
 
 public class MainFragment extends Fragment {
 
-    public static final int ROW_SIZE = 500;
-
-    private List<RowHeader> rowHeaderList;
     private List<ColumnHeader> columnHeaderList;
-    private List<Record> listRecord;
     private AbstractTableAdapter abstractTableAdapter;
     private TableView tableView;
     private Application application;
 
-    private Store store = new Store("abc", 50);
-    private LiveData<List<Record>> recordListLivedata;
+    public Store store = new Store("abc", 50);
+    TableViewAdapter tableViewAdapter = new TableViewAdapter(getContext(),store);
 
     TableViewModel tableViewModel = new TableViewModel(getContext(),
             store, application);
@@ -53,6 +46,7 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
         observeLiveData();
         initData();
+
     }
 
     @Override
@@ -61,9 +55,8 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         RelativeLayout fragment_container = (RelativeLayout) view.findViewById(R.id
                 .fragment_container);
-        tableViewModel.
-                // Create Store view
-                tableView = createTableView();
+        // Create Store view
+        tableView = createTableView();
         fragment_container.addView(tableView);
         initTableView();
         return view;
@@ -75,7 +68,7 @@ public class MainFragment extends Fragment {
        i.e.(Content View) via the view Holder. */
 
         // Set adapter
-        abstractTableAdapter = new TableViewAdapter(getContext());
+        abstractTableAdapter = new TableViewAdapter(getContext(), store);
         tableView.setAdapter(abstractTableAdapter);
 
         // Set layout params
@@ -90,9 +83,7 @@ public class MainFragment extends Fragment {
     }
 
     private void initData() {
-        rowHeaderList = new ArrayList<>();
         columnHeaderList = new ArrayList<>();
-        listRecord = new ArrayList<>();
     }
 
     private void initTableView() {

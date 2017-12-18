@@ -1,15 +1,14 @@
-package com.ostendi.osidoc.viewmodel.adapter;
+package com.ostendi.osidoc.view.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.ostendi.osidoc.viewmodel.ITableView;
-import com.ostendi.osidoc.viewmodel.TableView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.CellRecyclerViewAdapter;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.ColumnHeaderRecyclerViewAdapter;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.RowHeaderRecyclerViewAdapter;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.TableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.CellRecyclerViewAdapter;
+import com.ostendi.osidoc.view.adapter.recyclerview.ColumnHeaderRecyclerViewAdapter;
+import com.ostendi.osidoc.view.adapter.recyclerview.RowHeaderRecyclerViewAdapter;
 
 import java.util.List;
 

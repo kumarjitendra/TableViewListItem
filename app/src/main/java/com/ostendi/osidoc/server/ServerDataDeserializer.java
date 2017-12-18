@@ -21,14 +21,16 @@ import org.json.JSONObject;
 
 import java.util.Iterator;
 
+import static java.security.AccessController.getContext;
+
 
 public final class ServerDataDeserializer {
-
+    private static Store store;
     private ServerDataDeserializer() {
     }
 
     public static StoreDefinition deserializeStoreDefinition(String tableJsonText) {
-        StoreDefinition storeDefinition = StoreDefinition.getInstance();
+        StoreDefinition storeDefinition = new StoreDefinition();
         try {
             JSONObject tableJson = new JSONObject(tableJsonText);
 

@@ -1,11 +1,11 @@
-package com.ostendi.osidoc.viewmodel.layoutmanager;
+package com.ostendi.osidoc.view.layoutmanager;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.SparseArray;
 import android.view.View;
 
-import com.ostendi.osidoc.viewmodel.util.TableViewUtils;
+import com.ostendi.osidoc.view.util.TableViewUtils;
 
 public class ColumnHeaderLayoutManager extends LinearLayoutManager {
     //SparseArrays map integers to Objects.

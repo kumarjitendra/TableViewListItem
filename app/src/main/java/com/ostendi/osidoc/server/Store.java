@@ -15,16 +15,12 @@ import java.util.List;
 import static android.databinding.adapters.NumberPickerBindingAdapter.setValue;
 
 public class Store extends LiveData<List<Record>> {
-
     private FakeHttpServer fakeServer = new FakeHttpServer(500);
-
     private String storeId;
     private int pageSize;
-
     private StoreDefinition storeDefinition;
-
     private boolean isLoadMoreRecords = true;
-    private  List<Record> loadedRecords = new ArrayList<>();
+    private List<Record> loadedRecords = new ArrayList<>();
 
     public Store(String storeId, int pageSize) {
         this.storeId = storeId;
@@ -49,7 +45,7 @@ public class Store extends LiveData<List<Record>> {
 
             @Override
             protected Page doInBackground(URL... urls) {
-               try {
+                try {
                     Thread.currentThread();
                     Thread.sleep(50);
                 } catch (InterruptedException e) {
@@ -62,7 +58,8 @@ public class Store extends LiveData<List<Record>> {
                 return page;
             }
 
-            protected void onProgressUpdate(Integer... progress) {}
+            protected void onProgressUpdate(Integer... progress) {
+            }
 
             protected void onPostExecute(Page page) {
                 addNewRecords(page);
@@ -71,6 +68,7 @@ public class Store extends LiveData<List<Record>> {
 
         return true;
     }
+
     private void addNewRecords(Page page) {
         isLoadMoreRecords = page.hasMore();
         if (isLoadMoreRecords) {

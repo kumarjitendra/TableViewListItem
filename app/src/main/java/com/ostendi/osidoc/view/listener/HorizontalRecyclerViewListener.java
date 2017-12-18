@@ -1,11 +1,12 @@
-package com.ostendi.osidoc.viewmodel;
+package com.ostendi.osidoc.view.listener;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.CellRecyclerView;
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.CellRecyclerView;
 
 /**
  * Created by jitendra on 14/12/2017.

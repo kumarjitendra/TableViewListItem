@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel;
+package com.ostendi.osidoc.view;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -12,12 +12,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.ostendi.osidoc.viewmodel.adapter.AbstractTableAdapter;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.CellRecyclerView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-import com.ostendi.osidoc.viewmodel.handler.SelectionHandler;
-import com.ostendi.osidoc.viewmodel.layoutmanager.CellLayoutManager;
-import com.ostendi.osidoc.viewmodel.layoutmanager.ColumnHeaderLayoutManager;
+
+import com.ostendi.osidoc.view.adapter.AbstractTableAdapter;
+import com.ostendi.osidoc.view.adapter.recyclerview.CellRecyclerView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.handler.SelectionHandler;
+import com.ostendi.osidoc.view.layoutmanager.CellLayoutManager;
+import com.ostendi.osidoc.view.layoutmanager.ColumnHeaderLayoutManager;
+import com.ostendi.osidoc.view.listener.ColumnHeaderRecyclerViewItemClickListener;
+import com.ostendi.osidoc.view.listener.HorizontalRecyclerViewListener;
+import com.ostendi.osidoc.view.listener.ITableViewListener;
+import com.ostendi.osidoc.view.listener.RowHeaderRecyclerViewItemClickListener;
+import com.ostendi.osidoc.view.listener.VerticalRecyclerViewListener;
 
 public class TableView extends FrameLayout implements ITableView {
 

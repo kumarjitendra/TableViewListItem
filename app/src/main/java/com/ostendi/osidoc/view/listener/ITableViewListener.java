@@ -1,4 +1,4 @@
-package com.ostendi.osidoc.viewmodel;
+package com.ostendi.osidoc.view.listener;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

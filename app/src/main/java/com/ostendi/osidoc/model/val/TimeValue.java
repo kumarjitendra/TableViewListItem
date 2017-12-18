@@ -22,5 +22,10 @@ public class TimeValue extends Value {
 	public ValueType getType() {
 		return ValueType.TIME;
 	}
+	
+	@Override
+	public String toString() {
+		return value.toString();
+	}
 
 }

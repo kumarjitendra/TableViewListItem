@@ -21,4 +21,8 @@ public class IntValue extends Value {
 		return ValueType.INT;
 	}
 
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }
 }

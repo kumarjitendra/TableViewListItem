@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ostendi.osidoc.R;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
 
 /**
  * Created by jitendra on 21/11/2017.

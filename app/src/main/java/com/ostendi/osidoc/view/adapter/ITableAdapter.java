@@ -1,12 +1,12 @@
-package com.ostendi.osidoc.viewmodel.adapter;
+package com.ostendi.osidoc.view.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
 import android.view.ViewGroup;
 
-import com.ostendi.osidoc.viewmodel.ITableView;
-import com.ostendi.osidoc.viewmodel.adapter.recyclerview.holder.AbstractViewHolder;
-
+import com.ostendi.osidoc.view.ITableView;
+import com.ostendi.osidoc.view.adapter.recyclerview.holder.AbstractViewHolder;
 
 //ITableAdapter :contain all method concerning adapter
 public interface ITableAdapter {
